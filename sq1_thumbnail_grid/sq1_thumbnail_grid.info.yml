@@ -1,0 +1,7 @@
+name: SQ1 Thumbnail Grid
+type: module
+description: 'Render a grid of thumbnails.'
+package: SQ1
+core: '8.x'
+dependencies:
+  - views

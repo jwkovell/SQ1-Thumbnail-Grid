@@ -1,0 +1,45 @@
+<?php
+
+use Drupal\node\Entity\Node;
+
+function template_preprocess_views_view_sq1_thumbnail_grid(&$variables) {
+
+  $variables['options'] = $variables['view']->style_plugin->options;
+
+  $content = [];
+
+  $image_field = $variables['options']['image_field'];
+
+  // If an image field was provided...
+  if (strlen($image_field)) {
+
+    // Loop through view results.
+    foreach ($variables['view']->result as $key => $result) {
+
+      // Load this node by ID.
+      $id = $result->nid;
+      $node = Node::load($id);
+
+      // If this node has the provided image field...
+      if ($node->hasField($image_field)) {
+
+        // Loop through images referenced by this field.
+        foreach ($node->$image_field->referencedEntities() as $entity) {
+
+          $content[$key] = [];
+          $content[$key]['id'] = $id;
+          $content[$key]['title'] = $node->get('title')->value;
+          $content[$key]['image'] = $entity->url();
+
+        }
+      
+      }
+
+    }
+
+  }
+
+  $variables['module_root'] = drupal_get_path('module','sq1_thumbnail_grid');
+  $variables['content'] = $content;
+
+}

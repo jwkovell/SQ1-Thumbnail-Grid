@@ -1,0 +1,5 @@
+sq1_thumbnail_grid.base:
+  version: VERSION
+  css:
+    component:
+      css/thumbnail-grid.css: {}

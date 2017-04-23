@@ -1,0 +1,24 @@
+{{ attach_library('sq1_thumbnail_grid/sq1_thumbnail_grid.base') }}
+
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+
+{% set classes = 'sq1-thumbnail-grid' ~ ' ' ~ options.thumbnail_shape ~ ' ' ~ options.thumbnail_proportions ~ ' ' ~ options.thumbnail_shadow %}
+
+<ul class="{{ classes }}" data-columns-xl="{{ options.columns_xl }}" data-columns-l="{{ options.columns_l }}" data-columns-m="{{ options.columns_m }}" data-columns-s="{{ options.columns_s }}" data-columns-xs="{{ options.columns_xs }}">
+  {% for key, item in content %}
+    <li class="sq1-thumbnail">
+      <div class="sq1-thumbnail-frame">
+        {% if options.link_thumbnails == 1 %}
+          <a class="sq1-thumbnail-image" href="/node/{{ item.id }}" style="background-image:url({{ item.image }})"></a>
+        {% else %}
+          <div class="sq1-thumbnail-image" style="background-image:url({{ item.image }})"></div>
+        {% endif %}
+        {% if options.include_title == 1 %}
+          <div class="sq1-thumbnail-title">{{ item.title }}</div>
+        {% endif %}
+      </div>
+    </li>
+  {% endfor %}
+</ul>

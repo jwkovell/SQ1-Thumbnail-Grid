@@ -1,0 +1,298 @@
+.sq1-thumbnail-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sq1-thumbnail-grid:before,
+.sq1-thumbnail-grid:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+.sq1-thumbnail {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sq1-thumbnail-frame {
+  padding-top: 100%;
+  position: relative;
+}
+
+.sq1-thumbnail-grid.tall .sq1-thumbnail-frame {
+  padding-top: 120%;
+}
+
+.sq1-thumbnail-grid.wide .sq1-thumbnail-frame {
+  padding-top: 80%;
+}
+
+.sq1-thumbnail-frame .sq1-thumbnail-image {
+  background-size: cover;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  bottom: 5px;
+  left: 5px;
+}
+
+.sq1-thumbnail-grid.rounded .sq1-thumbnail-image {
+  -webkit-border-radius: 1em;
+  -moz-border-radius: 1em;
+  border-radius: 1em;
+}
+
+.sq1-thumbnail-grid.circle .sq1-thumbnail-image {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  border-radius: 100%;
+}
+
+.sq1-thumbnail-frame:hover .sq1-thumbnail-image {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.sq1-thumbnail-grid.drop-shadow .sq1-thumbnail-frame:hover .sq1-thumbnail-image {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.sq1-thumbnail-grid.inset-shadow .sq1-thumbnail-frame:hover .sq1-thumbnail-image {
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
+  -moz-box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
+  box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,1);
+}
+
+.sq1-thumbnail-grid.drop-and-inset-shadow .sq1-thumbnail-frame:hover .sq1-thumbnail-image {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,.75), inset 0px 0px 10px 0px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,.75), inset 0px 0px 10px 0px rgba(0,0,0,1);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,.75), inset 0px 0px 10px 0px rgba(0,0,0,1);
+}
+
+.sq1-thumbnail-grid.rounded .sq1-thumbnail-frame:hover .sq1-thumbnail-image {
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.sq1-thumbnail-title {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  margin-top: 100%;
+  z-index: 1;
+  background-color: #fff;
+  padding: .5em;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  font-size: 80%;
+}
+
+.sq1-thumbnail-title:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, .5);
+  top: 0px;
+  left: 50%;
+  margin: -21px 0 0 -10px;
+}
+
+.sq1-thumbnail-title:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-bottom-color: #fff;
+  top: 0px;
+  left: 50%;
+  margin: -20px 0 0 -10px;
+}
+
+.sq1-thumbnail-grid.tall .sq1-thumbnail-title {
+  margin-top: 120%;
+}
+
+.sq1-thumbnail-grid.wide .sq1-thumbnail-title {
+  margin-top: 80%;
+}
+
+.sq1-thumbnail-grid.rounded .sq1-thumbnail-title {
+  padding: .5em .75em;
+  -webkit-border-bottom-right-radius: 1em;
+  -webkit-border-bottom-left-radius: 1em;
+  -moz-border-radius-bottomright: 1em;
+  -moz-border-radius-bottomleft: 1em;
+  border-bottom-right-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+
+.sq1-thumbnail-grid.circle .sq1-thumbnail-title {
+  -webkit-border-radius: .5em;
+  -moz-border-radius: .5em;
+  border-radius: .5em;
+  text-align: center;
+}
+
+.sq1-thumbnail-frame:hover .sq1-thumbnail-title {
+  display: block;
+}
+
+.sq1-thumbnail-grid[data-columns-xl="1"] .sq1-thumbnail {
+  width: 100%;
+  float: none;
+}
+
+.sq1-thumbnail-grid[data-columns-xl="2"] .sq1-thumbnail {
+  width: 50%;
+  float: left;
+}
+
+.sq1-thumbnail-grid[data-columns-xl="3"] .sq1-thumbnail {
+  width: calc(100% / 3);
+  float: left;
+}
+
+.sq1-thumbnail-grid[data-columns-xl="4"] .sq1-thumbnail {
+  width: 25%;
+  float: left;
+}
+
+.sq1-thumbnail-grid[data-columns-xl="5"] .sq1-thumbnail {
+  width: 20%;
+  float: left;
+}
+
+@media (max-width: 960px) {
+
+  .sq1-thumbnail-grid[data-columns-l="1"] .sq1-thumbnail {
+    width: 100%;
+    float: none;
+  }
+
+  .sq1-thumbnail-grid[data-columns-l="2"] .sq1-thumbnail {
+    width: 50%;
+    float: left;
+  }
+
+  .sq1-thumbnail-grid[data-columns-l="3"] .sq1-thumbnail {
+    width: calc(100% / 3);
+    float: left;
+  }
+
+  .sq1-thumbnail-grid[data-columns-l="4"] .sq1-thumbnail {
+    width: 25%;
+    float: left;
+  }
+
+  .sq1-thumbnail-grid[data-columns-l="5"] .sq1-thumbnail {
+    width: 20%;
+    float: left;
+  }
+
+}
+
+@media (max-width: 720px) {
+
+  .sq1-thumbnail-grid[data-columns-m="1"] .sq1-thumbnail {
+    width: 100%;
+    float: none;
+  }
+
+  .sq1-thumbnail-grid[data-columns-m="2"] .sq1-thumbnail {
+    width: 50%;
+    float: left;
+  }
+
+  .sq1-thumbnail-grid[data-columns-m="3"] .sq1-thumbnail {
+    width: calc(100% / 3);
+    float: left;
+  }
+
+  .sq1-thumbnail-grid[data-columns-m="4"] .sq1-thumbnail {
+    width: 25%;
+    float: left;
+  }
+
+  .sq1-thumbnail-grid[data-columns-m="5"] .sq1-thumbnail {
+    width: 20%;
+    float: left;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .sq1-thumbnail-grid[data-columns-s="1"] .sq1-thumbnail {
+    width: 100%;
+    float: none;
+  }
+
+  .sq1-thumbnail-grid[data-columns-s="2"] .sq1-thumbnail {
+    width: 50%;
+    float: left;
+  }
+
+  .sq1-thumbnail-grid[data-columns-s="3"] .sq1-thumbnail {
+    width: calc(100% / 3);
+    float: left;
+  }
+
+  .sq1-thumbnail-grid[data-columns-s="4"] .sq1-thumbnail {
+    width: 25%;
+    float: left;
+  }
+
+  .sq1-thumbnail-grid[data-columns-s="5"] .sq1-thumbnail {
+    width: 20%;
+    float: left;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .sq1-thumbnail-grid[data-columns-xs="1"] .sq1-thumbnail {
+    width: 100%;
+    float: none;
+  }
+
+  .sq1-thumbnail-grid[data-columns-xs="2"] .sq1-thumbnail {
+    width: 50%;
+    float: left;
+  }
+
+  .sq1-thumbnail-grid[data-columns-xs="3"] .sq1-thumbnail {
+    width: calc(100% / 3);
+    float: left;
+  }
+
+  .sq1-thumbnail-grid[data-columns-xs="4"] .sq1-thumbnail {
+    width: 25%;
+    float: left;
+  }
+
+  .sq1-thumbnail-grid[data-columns-xs="5"] .sq1-thumbnail {
+    width: 20%;
+    float: left;
+  }
+
+}
